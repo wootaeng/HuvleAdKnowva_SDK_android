@@ -11,6 +11,7 @@ import com.byappsoft.huvleadlib.AdListener;
 import com.byappsoft.huvleadlib.AdView;
 import com.byappsoft.huvleadlib.BannerAdView;
 import com.byappsoft.huvleadlib.NativeAdResponse;
+import com.byappsoft.huvleadlib.NativeAdSDK;
 import com.byappsoft.huvleadlib.ResultCode;
 import com.byappsoft.huvleadlib.SDKSettings;
 
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     // TODO - Adknowva SDK Library
     private BannerAdView bav = null;
     // TODO - Adknowva SDK Library
+    private NativeAdSDK nativ = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +82,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
     // TODO - Adknowva SDK Library
+
+
+
 
     @Override
     public void onResume() {
