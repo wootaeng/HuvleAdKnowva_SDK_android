@@ -7,7 +7,7 @@
 
 ### 적용가이드
 - Usages 를 참고하시거나 아래 샘플 프로젝트를 참고해주세요.
-- [샘플 프로젝트 다운로드]:http://api.huvleview.com/ko/downloads/HuvleAdLibSample.zip
+- [샘플 프로젝트 다운로드] :http://api.huvleview.com/ko/downloads/HuvleAdLibSample.zip
 
 
 ## Usages
