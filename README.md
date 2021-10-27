@@ -1,5 +1,12 @@
 # HuvleAdKnowva_SDK_android
 
+## 애드노바 (adknowva) Install Guide
+
+애드노바(adknowva)의 연동 방식은 Gradle을 이용한 방법으로 샘플 예제를 이용해 간단하게 연동이 가능합니다.
+아래 가이드 문서 내용은 본 문서 적용가이드의 **"모든 애드노바 샘플 프로젝트 다운로드"** 하시면 모든 내용을 보실 수 있습니다.
+연동시 애드노바(adknowva) 최신버전을 확인해 주세요. 현재 최신버전은 **1.2.2** 버전입니다.
+
+
 
 ## 제휴 신청
 허블 애드노바(AdKnowva) SDK 제휴 방법은 https://www.huvleview.com/doc/contact.php 에 절차를 안내 드리고 있습니다.
@@ -7,7 +14,7 @@
 
 ### 적용가이드
 - Usages 를 참고하시거나 아래 샘플 프로젝트를 참고해주세요.
-- <a href="http://api.huvleview.com/ko/downloads/HuvleSDK.zip">애드노바 연동예제</a>
+- [모든 애드노바 샘플 프로젝트 다운로드](https://github.com/wootaeng/HuvleAdKnowva_SDK_android/archive/main)
 
 
 ## Usages
@@ -48,8 +55,11 @@ allprojects {
 android {
     ...
     defaultConfig {
-        ...
+        .
+	.
         multiDexEnabled true
+	.
+	.
     }
 }
 
@@ -74,22 +84,22 @@ protected void onCreate(Bundle savedInstanceState) {
   super.onCreate( savedInstanceState );
   setContentView( R.layout.activity_main );
 
-  setHuvleAD(); // 허블 광고 호출
+  setHuvleAD(); // // Call Huvle’s advertisement
 }
 
 private void setHuvleAD() {
   final BannerAdView staticBav = findViewById(R.id.banner_view);
-  // 아래 "test" 값은 http://ssp.huvle.com/ 에서 가입 > 매체생성 > zoneid 입력후 테스트 하시고, release시점에 허블에 문의주시면 인증됩니다. 배너사이즈는 변경하지 마세요.
+  // For the "test" value below, please go to http://ssp.huvle.com/ to sign up > create media > Test your app after typing zoneid. Next, contact Huvle before releasing your app for authentication. You must not change the banner size.
   initBannerView(staticBav, "test",320,50);
 }
 private void initBannerView(final BannerAdView bav, String id, int w , int h) {
   bav.setPlacementID(id);
   bav.setAdSize(w, h);
   bav.setShouldServePSAs(false);
-  bav.setClickThroughAction(ANClickThroughAction.OPEN_DEVICE_BROWSER); // 광고 클릭시 브라우저를 기본브라우저로 Open
+  bav.setClickThroughAction(ANClickThroughAction.OPEN_DEVICE_BROWSER); // Open the browser as the default browser when clicking on an advertisement
   bav.setResizeAdToFitContainer(true);
   AdListener adListener = new AdListener() {
-    @Override public void onAdRequestFailed(AdView bav, ResultCode errorCode) {/*광고가 없을때 처리*/}
+    @Override public void onAdRequestFailed(AdView bav, ResultCode errorCode) {/*Handle when there is no advertiment*/}
     @Override public void onAdLoaded(AdView bav) {Log.v("Huvle_Banner", "The Ad Loaded!");}
     @Override public void onAdLoaded(NativeAdResponse nativeAdResponse) {Log.v("Huvle_Banner", "Ad onAdLoaded NativeAdResponse");}
     @Override public void onAdExpanded(AdView bav) {Log.v("Huvle_Banner", "Ad expanded");}
