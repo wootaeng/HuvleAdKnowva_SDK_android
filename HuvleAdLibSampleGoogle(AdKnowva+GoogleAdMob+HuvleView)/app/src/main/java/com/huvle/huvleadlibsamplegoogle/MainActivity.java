@@ -76,7 +76,7 @@ public class MainActivity extends Activity {
 
     // TODO - Adknowva SDK Library
     private void setHuvleAD(final boolean opt) {
-        SDKSettings.useHttps(true);
+
         loadAd = true;
         /*
             정적 구현부와 동적구현부는 참고하시어 하나만 적용하시기 바랍니다.(With checking the implementation guide below, please apply Implementation either only Dynamic or Static)
